@@ -38,6 +38,10 @@ while game_on:
         scoreboard.rewrite()
         food.refresh()
 
+    #detect wall collisionss
+    if snake.segments[0].xcor() > 280 or snake.segments[0].xcor() < -280 or snake.segments[0].ycor() > 280 or snake.segments[0].ycor() < -280:
+        scoreboard.end_game()
+        game_on = False
 
 #exit conditions
 screen.exitonclick()
