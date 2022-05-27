@@ -43,3 +43,8 @@ class Snake:
         if self.segments[0].heading() != 90:
             self.segments[0].setheading(270)
 
+    def refresh(self):
+        for segment in self.segments:
+            segment.goto(10000, 10000)
+        self.segments.clear()
+        self.create_snake()
